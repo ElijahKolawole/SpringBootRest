@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(value = "prototype")//by default singleton design suggest create onl one instance of the object irrespective of how many times you instanciate the class. Prototype says, create according to the amount of instanciation
+//@Scope(value = "prototype")//by default singleton design suggest create onl one instance of the object irrespective of how many times you instanciate the class. Prototype says, create according to the amount of instanciation
 public class Alien {
     private String aid;
     private String aName;
