@@ -8,8 +8,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
     @RequestMapping("home")
+    //@ResponseBody() // to create a string literal to be printed on page directly instead of executing an html page
     public String home(){
-        return  "home.jsp";
+        return "home";
+    }
+
+    @RequestMapping("*")
+    @ResponseBody() // to create a string literal to be printed on page directly instead of executing an html page
+    public String error(){
+        return "404: ERROR://Incorrect context path specified.";
     }
 
 }
