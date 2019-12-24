@@ -11,7 +11,7 @@ public class Miiapp1Application {
         ConfigurableApplicationContext context = SpringApplication.run(Miiapp1Application.class, args);
 
        Alien a = context.getBean(Alien.class);
-       Alien b = context.getBean(Alien.class);
+       a.show();
 
     }
 

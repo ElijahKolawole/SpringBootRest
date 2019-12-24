@@ -1,5 +1,8 @@
 package com.hiscox.miiapp_1;
 
+import com.sun.media.jfxmediaimpl.HostUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +12,9 @@ public class Alien {
     private String aid;
     private String aName;
     private String tech;
+    @Autowired
+    @Qualifier("lap1")
+    private Laptop laptop;
 
     public Alien() {
         System.out.println("ALien object created");
@@ -36,5 +42,10 @@ public class Alien {
 
     public void setTech(String tech) {
         this.tech = tech;
+    }
+
+    public void show(){
+        System.out.println("Alien class working...");
+        laptop.compile();
     }
 }
