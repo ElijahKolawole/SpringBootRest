@@ -12,10 +12,12 @@
 </head>
 <body>
 <h1>Index Servlet for Alien</h1>
-
-<input type="text"><br>
-<input type="text"><br>
-<input type="submit" name="submit">
+<form action="addAlien">
+    <input type="text" name="aId"><br>
+    <input type="text" name="aName"><br>
+    <input type="text" name="lang"><br>
+    <input type="submit" name="submit">
+</form>
 
 </body>
 </html>

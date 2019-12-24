@@ -1,6 +1,11 @@
 package com.hiscox.miiapp_1.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Alien {
+    @Id
     private int aId;
     private String aName;
     private String lang;
