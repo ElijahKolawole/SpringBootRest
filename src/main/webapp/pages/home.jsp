@@ -12,6 +12,6 @@
 </head>
 <body>
         <p>This is Home Servlet. You are close to becoming an enterprise developer.</p>
-        <p> Welcome ${name}</p>
+        <p> Welcome ${obj.aid},${obj.aName}, ${obj.tech} </p>
 </body>
 </html>

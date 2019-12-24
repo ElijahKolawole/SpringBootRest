@@ -15,11 +15,11 @@ public class HomeController {
     @RequestMapping("home")
     //we are going to pass both the model and view within the controller class to fulfill MVC pattern.
     //@ResponseBody() // to create a string literal to be printed on page directly instead of executing an html page
-    public ModelAndView home(@RequestParam("name") String name, HttpSession session){
+    public ModelAndView home(Alien alien){
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name, ");
+        mv.addObject("obj", alien);
         mv.setViewName("home");
-        System.out.println("Test: Hello servlet " + name);
+        System.out.println("Test: Hello servlet " + alien);
        // session.setAttribute("name", name);
         //return "home";
         return mv;
