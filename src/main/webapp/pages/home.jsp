@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-        This is Home Servlet. You are close to becoming an enterprise developer.
+        <p>This is Home Servlet. You are close to becoming an enterprise developer.</p>
+        <p> Welcome ${name}</p>
 </body>
 </html>
