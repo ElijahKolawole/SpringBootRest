@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -26,8 +27,8 @@ public class AlienController {
         repo.save(alien);
         return "index";
     }
-
-    @RequestMapping("/getAlien")
+        //for MVC
+    @RequestMapping("/getAlien") //searches for viewname in which to display the current responsedata
     public ModelAndView getAlien(@RequestParam int aId){
         ModelAndView mv = new ModelAndView("alienfetch");
         Alien alien = repo.findById(aId).orElse(new Alien());
@@ -37,5 +38,13 @@ public class AlienController {
         mv.addObject(alien);
         return  mv;
     }
+
+    //for REST or web services
+    @RequestMapping("/aliens")
+    @ResponseBody()//does not look for any view. Simply return data as a web resource
+    public String returnAliens(){
+        return repo.findAll().toString();
+    }
+
 
 }
