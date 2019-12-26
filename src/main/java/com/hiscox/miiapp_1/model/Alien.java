@@ -1,11 +1,13 @@
 package com.hiscox.miiapp_1.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Alien {
     @Id
+    @GeneratedValue
     private int aId;
     private String aName;
     private String lang;
