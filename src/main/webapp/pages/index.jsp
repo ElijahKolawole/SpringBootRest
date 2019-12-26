@@ -19,5 +19,12 @@
     <input type="submit" name="submit">
 </form>
 
+<hr>
+        <h2>Enter ID and click submit to search for alien</h2>
+<form action="getAlien">
+    ID: <input type="text" name="aId"><br>
+    <input type="submit" name="submit">
+</form>
+
 </body>
 </html>
