@@ -49,7 +49,7 @@ public class AlienController {
 
     @RequestMapping("/alien/{aid}")
     @ResponseBody()//does not look for any view. Simply return data as a web resource
-    public String returnAlien(@PathVariable(aid) int aid){
+    public String returnAlien(@PathVariable("aid") int aid){
         return repo.findById(aid).toString();
     }
 
