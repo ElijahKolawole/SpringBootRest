@@ -42,6 +42,7 @@ public class AlienController {
     }
 
     //for REST or web services
+    //@RequestMapping(path="/aliens", produces = {"application/xml"})
     @RequestMapping("/aliens")
     @ResponseBody()//does not look for any view. Simply return data as a web resource
     public List<Alien> returnAliens(){
