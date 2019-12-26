@@ -40,23 +40,23 @@ public class AlienController {
 
     //for REST or web services
     //@RequestMapping(path="/aliens", produces = {"application/xml"})
-    @RequestMapping("/aliens")
+    @GetMapping("/aliens")
    // @ResponseBody()//does not look for any view. Simply return data as a web resource
     public List<Alien> returnAliens(){
         return repo.findAll();
     }
 
-    @RequestMapping("/alien/{aid}")
+
+    @PostMapping("/alien")
+    public Alien receiveAlien(@RequestBody Alien alien){
+        repo.save(alien);
+        return alien;
+    }
+
+    @GetMapping("/alien/{aid}")
     //@ResponseBody()//does not look for any view. Simply return data as a web resource
     public Optional<Alien> returnAlien(@PathVariable("aid") int aid){
         return repo.findById(aid);
     }
-
-    @PostMapping("/alien/{aid}")
-   // @ResponseBody()//does not look for any view. Simply return data as a web resource
-    public Optional<Alien> receiveAlien(@PathVariable("aid") int aid){
-        return repo.findById(aid);
-    }
-
 
 }
