@@ -53,6 +53,17 @@ public class AlienController {
         return alien;
     }
 
+    @DeleteMapping("/alien/{aid}")
+    public String deleteAlien(@PathVariable int aid){
+        try {
+            Alien a = repo.getOne(aid);
+            repo.delete(a);
+            return "Alien with id "+ aid + " has been successfully deleted" + "\n" + repo.findAll();
+        }
+        catch (Exception ex){
+            return "could not successfully perform the action. Try again";
+        }
+   }
     @GetMapping("/alien/{aid}")
     //@ResponseBody()//does not look for any view. Simply return data as a web resource
     public Optional<Alien> returnAlien(@PathVariable("aid") int aid){
