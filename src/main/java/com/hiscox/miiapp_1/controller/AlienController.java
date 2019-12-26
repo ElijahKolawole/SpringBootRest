@@ -46,13 +46,19 @@ public class AlienController {
         return repo.findAll();
     }
 
-    //@PostMapping(path="/aliens", consumes = {"application/xml"}) to limit submissions to xml
-    @PostMapping("/alien")
+    //@PostMapping("/alien")
+    @PostMapping(path="/aliens", consumes = {"application/json"}) //to limit submissions to xml
     public Alien receiveAlien(@RequestBody Alien alien){
         repo.save(alien);
         return alien;
     }
 
+    //@PutMapping("/alien")
+    @PutMapping(path="/alien", consumes = {"application/json"}) //to limit submissions to xml
+    public Alien saveOrUpdateAlien(@RequestBody Alien alien){
+        repo.save(alien);
+        return alien;
+    }
     @DeleteMapping("/alien/{aid}")
     public String deleteAlien(@PathVariable int aid){
         try {
