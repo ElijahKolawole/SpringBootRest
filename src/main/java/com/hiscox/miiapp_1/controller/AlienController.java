@@ -46,7 +46,7 @@ public class AlienController {
         return repo.findAll();
     }
 
-
+    //@PostMapping(path="/aliens", consumes = {"application/xml"}) to limit submissions to xml
     @PostMapping("/alien")
     public Alien receiveAlien(@RequestBody Alien alien){
         repo.save(alien);
