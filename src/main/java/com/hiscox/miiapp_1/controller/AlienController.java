@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AlienController {
@@ -43,14 +44,14 @@ public class AlienController {
     //for REST or web services
     @RequestMapping("/aliens")
     @ResponseBody()//does not look for any view. Simply return data as a web resource
-    public String returnAliens(){
-        return repo.findAll().toString();
+    public List<Alien> returnAliens(){
+        return repo.findAll();
     }
 
     @RequestMapping("/alien/{aid}")
     @ResponseBody()//does not look for any view. Simply return data as a web resource
-    public String returnAlien(@PathVariable("aid") int aid){
-        return repo.findById(aid).toString();
+    public Optional<Alien> returnAlien(@PathVariable("aid") int aid){
+        return repo.findById(aid);
     }
 
 
