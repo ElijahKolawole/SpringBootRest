@@ -4,6 +4,7 @@ import com.hiscox.miiapp_1.dao.AlienRepo;
 import com.hiscox.miiapp_1.model.Alien;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -46,10 +47,10 @@ public class AlienController {
         return repo.findAll().toString();
     }
 
-    @RequestMapping("/alien/102")
+    @RequestMapping("/alien/{aid}")
     @ResponseBody()//does not look for any view. Simply return data as a web resource
-    public String returnAlien(){
-        return repo.findById(102).toString();
+    public String returnAlien(@PathVariable(aid) int aid){
+        return repo.findById(aid).toString();
     }
 
 
