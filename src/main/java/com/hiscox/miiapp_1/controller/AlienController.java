@@ -46,5 +46,11 @@ public class AlienController {
         return repo.findAll().toString();
     }
 
+    @RequestMapping("/alien/102")
+    @ResponseBody()//does not look for any view. Simply return data as a web resource
+    public String returnAlien(){
+        return repo.findById(102).toString();
+    }
+
 
 }
