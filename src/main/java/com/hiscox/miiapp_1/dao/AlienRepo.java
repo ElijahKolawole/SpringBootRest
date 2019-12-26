@@ -12,6 +12,6 @@ public interface AlienRepo extends JpaRepository<Alien, Integer> {
 
     List<Alien> findByLang(String lang);
    // List<Alien> findByAidGreaterThan(int aid);
-    @Query("from Alien where lang=?1 order by aName asc ")
+    @Query("from Alien where lang=?1 order by aName")
     List<Alien> findByLangSorted(String aName);
 }

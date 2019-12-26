@@ -36,7 +36,7 @@ public class AlienController {
         Alien alien = repo.findById(aId).orElse(new Alien());
         System.out.println("findByLang: " + repo.findByLang("java"));
        //System.out.println("findByAidGreaterThan: " + repo.findByAidGreaterThan(102));
-        System.out.println("findByLangSorted: " + repo.findByLangSorted("java"));
+      //  System.out.println("findByLangSorted: " + repo.findByLangSorted("java"));
         mv.addObject(alien);
         return  mv;
     }
